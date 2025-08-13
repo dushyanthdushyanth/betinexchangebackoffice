@@ -10,17 +10,6 @@ const SidebarMenu = ({ link,toggleIcon }: any) => {
   const [showSubnav, setShowSubnav] = useState<boolean>(false);
   const { isOpened } = useSelector((state: RootState) => state.sidebarReducer);
   const pathName = usePathname()
-  const dispatch = useDispatch();
-
-
-  // const handleClick = () => {
-  //   if (!isOpened) {
-  //     toggleIcon();
-  //   } else {
-  //     setActiveSubnav(activeSubnav === link.name ? null : link.name);
-  //   }
-  //   onClick();
-  // };
 
   return (
     <>
@@ -70,8 +59,7 @@ const SidebarMenu = ({ link,toggleIcon }: any) => {
           </Tooltip>
 
         ) : (
-          // <span>{link.icon}</span>
-          <></>
+          <span>{link.icon}</span>
         )}
 
 
@@ -84,11 +72,11 @@ const SidebarMenu = ({ link,toggleIcon }: any) => {
           </p>
         )}
 
-        {/* {isOpened && link.sublinks && showSubnav ? (
+        {isOpened && link.sublinks && showSubnav ? (
           <DropdownArrow className="w-max h-4 text-[#4AC5B3] pl-[0.25rem]" />
         ) : link?.sublinks?.length && isOpened ? (
           <DropdownRightArrow className="w-max h-4 pl-[0.25rem] text-[#4AC5B3]" />
-        ) : null} */}
+        ) : null}
       </div>
 
       {showSubnav && isOpened && (

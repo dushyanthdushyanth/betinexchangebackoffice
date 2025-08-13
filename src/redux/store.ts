@@ -6,6 +6,7 @@ import {
 import { configureStore } from "@reduxjs/toolkit";
 
 import cookieReducer from './slices/cookieSlice';
+import dashboardReducer from "./slices/dashboardSlice"
 
 
 
@@ -18,6 +19,7 @@ export const store = configureStore({
   reducer: {
     cookieReducer:cookieReducer,
         sidebarReducer: sidebarReducer,
+        dashboardReducer: dashboardReducer
   },
 });
 

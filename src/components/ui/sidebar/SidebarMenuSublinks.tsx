@@ -4,12 +4,13 @@ import { RootState, useDispatch, useSelector } from "@/redux/store";
 
 import Link from "next/link";
 import React, { useState } from "react";
-import { pushToActiveLinks } from "@/redux/slices/dashboardSlice";
+// import { pushToActiveLinks } from "@/redux/slices/dashboardSlice";
 import { usePathname } from "next/navigation";
 import { useRouter } from "next/navigation";
-// import { handleSidebar } from "./state/sidebarSlice";
+import { handleSidebar } from "./state/sidebarSlice";
 
 const SidebarMenuSublinks = ({ links, show }: any) => {
+  console.log("gbfdvgdfg",links)
   const { isOpened } = useSelector((state: RootState) => state.sidebarReducer);
   return (
     <AnimatePresence>
@@ -47,20 +48,20 @@ const MenuChilds = ({ link, index, isOpened }: any) => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           key={link.name}
-          onClick={() => {
-            link?.sublinks
-              ? ""
-              : dispatch(
-                pushToActiveLinks(
-                  {
-                    name: link.name,
-                    href: link.href,
-                    id: link.id,
-                  },
-                  router
-                )
-              );
-          }}
+          // onClick={() => {
+          //   link?.sublinks
+          //     ? ""
+          //     : dispatch(
+          //       pushToActiveLinks(
+          //         {
+          //           name: link.name,
+          //           href: link.href,
+          //           id: link.id,
+          //         },
+          //         router
+          //       )
+          //     );
+          // }}
         >
           {link?.sublinks ? (
             <>

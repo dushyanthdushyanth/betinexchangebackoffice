@@ -43,7 +43,7 @@ const [loginInfo, setLoginInfo] = useState({
         const data = await response.json();
         setLoginInfo((prevState) => ({
           ...prevState,
-          ipAddress: data.ip,
+          // ipAddress: data.ip,
         }));
       } catch (error) {
         console.error("Error fetching IP:", error);
@@ -106,7 +106,7 @@ const [loginInfo, setLoginInfo] = useState({
     dispatch(setClientId(clientId));
     dispatch(setRefreshToken(refreshToken));
     toast.success("Login successful");
-    router.push("/userlist");
+    router.push("/betinexchange/userlist");
         }
       } else {
         switch (message) {

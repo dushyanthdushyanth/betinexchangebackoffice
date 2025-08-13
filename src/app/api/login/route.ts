@@ -10,12 +10,12 @@ export async function POST(req: Request) {
 
     // console.log("Logghfxhgjhasb", body);
   
-    const response: any = await performPostAPICall(`/admin/login`, body);
+    const response = await performPostAPICall(`/admin/login`, body);
     // return NextResponse.json({ ...res.data })
     console.log("Logghfxhgjhasb", response);
   
     if (response.status == 200) {
-      let resp = NextResponse.json({ ...response.data });
+      const resp = NextResponse.json({ ...response.data });
       // resp.cookies.set({
       //   name: "accessToken",
       //   value: response.data.data.accessToken,
@@ -25,7 +25,7 @@ export async function POST(req: Request) {
       //   value: response.data.data.clientId,
       // })
   
-      console.log("Logghfxhgjhasb", response.data);
+      console.log("Logghfxhgjhasb1111111111", response.data);
       return resp;
     } else {
       // let res = NextResponse.json({ ...response.error.response.data }, { status: response.error.response.status });

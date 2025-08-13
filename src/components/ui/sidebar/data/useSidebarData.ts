@@ -1,35 +1,37 @@
-import Settings from '../../icons/Settings'
-import Dashboard from '../../icons//Dashboard'
-import ManagementIcon from '../../icons/ManagementIcon'
-import WithdrawManagementIcon from '../../icons/WithdrawManagementIcon'
-import ReconciliationIcon from '../../icons/ReconciliationIcon'
-import DepositManagementIcon from '../../icons/DepositManagement'
-import SMSLogsIcon from '../../icons/SMSLogsIcon'
-import Report from '../../icons/Report'
-import Configure from '../../icons/Configure'
-import Channels from '../../icons/Channels'
-import { Admin } from '../../icons'
-import { Payments } from '../../icons'
-import { User } from '../../icons'
-import SecretKey from '../../icons/SecretKey'
-import Configuration from '../../icons/Configuration'
-import UserIcon from '../../icons/UserIcon'
-import TelegramBot from '../../icons/TelegramBot'
-import ClientConfiguration from '../../icons/ClientConfiguration'
-import UserAgentIcon from '../../icons/UserAgentIcon'
-import UserRoleIcon from '../../icons/UserRoleIcon'
-import Permission from '../../icons/Permission'
-import Download from '../../icons/Download'
-import Upload from '../../icons/Upload'
+import Settings from '@/components/ui/icons/Settings'
+import Dashboard from '@/components/ui/icons/Dashboard'
+import ManagementIcon from '@/components/ui/icons/ManagementIcon'
+import WithdrawManagementIcon from '@/components/ui/icons/WithdrawManagementIcon'
+import ReconciliationIcon from '@/components/ui/icons/ReconciliationIcon'
+import DepositManagementIcon from '@/components/ui/icons/DepositManagement'
+import SMSLogsIcon from '@/components/ui/icons/SMSLogsIcon'
+import Report from '@/components/ui/icons/Report'
+import Configure from '@/components/ui/icons/Configure'
+import Channels from '@/components/ui/icons/Channels'
+import { Admin } from '@/components/ui/icons'
+import { Payments } from '@/components/ui/icons'
+import { User } from '@/components/ui/icons'
+import SecretKey from '@/components/ui/icons/SecretKey'
+import Configuration from '@/components/ui/icons/Configuration'
+import UserIcon from '@/components/ui/icons/UserIcon'
+import TelegramBot from '@/components/ui/icons/TelegramBot'
+import ClientConfiguration from '@/components/ui/icons/ClientConfiguration'
+import UserAgentIcon from '@/components/ui/icons/UserAgentIcon'
+import UserRoleIcon from '@/components/ui/icons/UserRoleIcon'
+import Permission from '@/components/ui/icons/Permission'
+import Download from '@/components/ui/icons/Download'
+import Upload from '@/components/ui/icons/Upload'
 
 const useSidebarData = (filters: any[]) => {
 	const SIDEBAR_LINKS = [
-		filters?.includes('DASHBOARD_SUMMARY') && {
+		// filters?.includes('DASHBOARD_SUMMARY') && 
+		{
 			name: 'Dashboard',
 			icon: Dashboard(),
 			href: '',
 			sublinks: [
-				filters?.includes('DASHBOARD_SUMMARY') && {
+				// filters?.includes('DASHBOARD_SUMMARY') && 
+				{
 					id: 1,
 					name: 'Summary',
 					href: '/dashboard',
@@ -37,43 +39,47 @@ const useSidebarData = (filters: any[]) => {
 			],
 		},
 
-		((filters?.includes('DAILY_REPORTS') ||
-					filters?.includes('MONTHLY_REPORTS') ||
-					filters?.includes('BANKWISE_REPORTS') ||
-					filters?.includes('AMOUNTWISE_REPORTS') ||
-					filters?.includes('PROJECTWISE_REPORTS') ||
-					filters?.includes('AGENTWISE_REPORTS') ||
-					filters?.includes('BANKWISE_REPORTS') ||
-					filters?.includes('DASHBOARD_30MINDATA'))
-        ||
-        (filters?.includes('DAILY_PAYOUT_REPORTS') ||
-        filters?.includes('MONTHLY_PAYOUT_REPORTS') ||
-        filters?.includes('AGENT_PAYOUT_REPORTS') ||
-        filters?.includes('PROJECT_PAYOUT_REPORTS'))
-        ||
-        (filters?.includes('BANK_DAILY_PAYIN_REPORTS') ||
-					filters?.includes('BANK_MONTHLY_PAYIN_REPORTS') ||
-					filters?.includes('BANK_BANKWISE_PAYIN_REPORTS') ||
-					filters?.includes('AGENTWISE_PAYIN') ||
-					filters?.includes('PROJECT_WISE_BANKPAYIN'))
-      ) && {
+	// 	((filters?.includes('DAILY_REPORTS') ||
+	// 				filters?.includes('MONTHLY_REPORTS') ||
+	// 				filters?.includes('BANKWISE_REPORTS') ||
+	// 				filters?.includes('AMOUNTWISE_REPORTS') ||
+	// 				filters?.includes('PROJECTWISE_REPORTS') ||
+	// 				filters?.includes('AGENTWISE_REPORTS') ||
+	// 				filters?.includes('BANKWISE_REPORTS') ||
+	// 				filters?.includes('DASHBOARD_30MINDATA'))
+    //     ||
+    //     (filters?.includes('DAILY_PAYOUT_REPORTS') ||
+    //     filters?.includes('MONTHLY_PAYOUT_REPORTS') ||
+    //     filters?.includes('AGENT_PAYOUT_REPORTS') ||
+    //     filters?.includes('PROJECT_PAYOUT_REPORTS'))
+    //     ||
+    //     (filters?.includes('BANK_DAILY_PAYIN_REPORTS') ||
+	// 				filters?.includes('BANK_MONTHLY_PAYIN_REPORTS') ||
+	// 				filters?.includes('BANK_BANKWISE_PAYIN_REPORTS') ||
+	// 				filters?.includes('AGENTWISE_PAYIN') ||
+	// 				filters?.includes('PROJECT_WISE_BANKPAYIN'))
+    //   ) 
+	//   &&
+	   {
 			name: 'Reports',
 			icon: Report(),
 			href: '',
 			sublinks: [
-				(filters?.includes('DAILY_REPORTS') ||
-					filters?.includes('MONTHLY_REPORTS') ||
-					filters?.includes('BANKWISE_REPORTS') ||
-					filters?.includes('AMOUNTWISE_REPORTS') ||
-					filters?.includes('PROJECTWISE_REPORTS') ||
-					filters?.includes('AGENTWISE_REPORTS') ||
-					filters?.includes('BANKWISE_REPORTS') ||
-					filters?.includes('DASHBOARD_30MINDATA')) && {
+				// (filters?.includes('DAILY_REPORTS') ||
+				// 	filters?.includes('MONTHLY_REPORTS') ||
+				// 	filters?.includes('BANKWISE_REPORTS') ||
+				// 	filters?.includes('AMOUNTWISE_REPORTS') ||
+				// 	filters?.includes('PROJECTWISE_REPORTS') ||
+				// 	filters?.includes('AGENTWISE_REPORTS') ||
+				// 	filters?.includes('BANKWISE_REPORTS') ||
+				// 	filters?.includes('DASHBOARD_30MINDATA')) && 
+				{
 					name: 'Payin Reports',
 					icon: Report(),
 					href: '',
 					sublinks: [
-						filters?.includes('DAILY_REPORTS') && {
+						// filters?.includes('DAILY_REPORTS') && 
+						{
 							id: 3,
 							name: 'Daily Payin',
 							href: '/dashboard/reports/walletdailyreport',

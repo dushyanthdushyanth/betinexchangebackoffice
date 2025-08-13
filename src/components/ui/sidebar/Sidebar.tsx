@@ -9,15 +9,15 @@ import { handleSidebar } from "./state/sidebarSlice";
 import { motion } from "framer-motion";
 import useSidebarData from "./data/useSidebarData";
 import { RootState, useDispatch, useSelector ,resetAll} from "@/redux/store";
-import { logout, reSetActiveLinks } from "@/redux/slices/dashboardSlice";
-// import Hamburger from "../icons/Hamburger";
+// import { logout, reSetActiveLinks } from "@/redux/slices/dashboardSlice";
+import Hamburger from "../icons/Hamburger";
 import Logo from "../icons/logo.png";
-// import WithdrawalSearchIcon from "../icons/WithdrawalSearchIcon"
-// import WithdrawLanguage from "../icons/WithdrawLanguage";
+import WithdrawalSearchIcon from "../icons/WithdrawalSearchIcon"
+import WithdrawLanguage from "../icons/WithdrawLanguage";
 import Image from 'next/image';
 import WithdrawSettings from "../icons/WithdrawSettings";
 import { isBrowser,showToast } from "@/utils";
-// import WithdrawExitIcon from "../icons/WithdrawExitIcon"
+import WithdrawExitIcon from "../icons/WithdrawExitIcon"
 import profile from "../icons/profile.png"
 import { clearCookies } from "@/redux/slices/cookieSlice";
 import { useRouter } from "next/navigation";
@@ -95,7 +95,7 @@ const Sidebar = () => {
   const handleLogout = async () => {
     typeof window !== "undefined" && localStorage.clear();
     dispatch(clearCookies());
-    dispatch(reSetActiveLinks());
+    // dispatch(reSetActiveLinks());
     dispatch(resetAll())
     router.push("/login");
     isBrowser() && localStorage.clear();
@@ -112,7 +112,7 @@ const Sidebar = () => {
     animate={{ opacity: 1 }}
     transition={{ duration: 0.5 }}
     ref={sidebarRef}
-    className={`${isOpened ? 'w-[280px]' : 'w-[50px]'} h-screen flex flex-col bg-primary`}
+    className={`${isOpened ? 'w-[280px] bg-black' : 'w-[50px]'} h-screen flex flex-col bg-primary`}
   >
     {/* Top Section - Scrollable when needed */}
     <div className="flex flex-col grow overflow-y-auto min-h-0">
@@ -125,7 +125,7 @@ const Sidebar = () => {
           {isOpened ? (
             <>
               <span className="text-accent">
-                <Image src={Logo} alt="logo" />
+                {/* <Image src={Logo} alt="logo" /> */}
               </span>
               <span className="text-[1.25rem] font-inter font-semibold text-accent">
                 Multi-Tenant
@@ -133,7 +133,7 @@ const Sidebar = () => {
             </>
           ) : (
             <span className="text-accent">
-              <Image src={Logo} alt="logo" />
+              {/* <Image src={Logo} alt="logo" /> */}
             </span>
           )}
         </div>
@@ -142,7 +142,7 @@ const Sidebar = () => {
         <div className={`${isOpened ? 'px-[1.5rem] h-max mt-[1.5rem]' : 'px-[16px] h-max mt-[1.5rem]'}`}>
           {isOpened ? (
             <div className="flex items-center rounded-lg bg-[#475467] h-[2.75rem] pl-[0.875rem]">
-              <div><WithdrawalSearchIcon /></div>
+              {/* <div><WithdrawalSearchIcon /></div> */}
               <div className="h-full flex items-center pl-[0.5rem]">
                 <input
                   placeholder="Search"
@@ -152,7 +152,7 @@ const Sidebar = () => {
             </div>
           ) : (
             <span className="px-[1.5rem] cursor-pointer">
-              <WithdrawalSearchIcon />
+              {/* <WithdrawalSearchIcon /> */}
             </span>
           )}
         </div>
@@ -193,7 +193,7 @@ const Sidebar = () => {
             {isOpened ? (
               <>
                 <div className="w-[2.5rem] h-max">
-                  <Image src={profile} alt="profile" />
+                  {/* <Image src={profile} alt="profile" /> */}
                 </div>
                 <div className="w-[7.8125rem] flex flex-col items-start justify-center text-accent">
                   <span className="text-[0.875rem] font-inter font-semibold">{userNames}</span>
@@ -201,14 +201,14 @@ const Sidebar = () => {
               </>
             ) : (
               <div className="w-[2.5rem] h-max pt-[1.5rem]">
-                <Image src={profile} alt="profile" />
+                {/* <Image src={profile} alt="profile" /> */}
               </div>
             )}
           </div>
   
           {/* Logout */}
           <div className={`${isOpened ? '' : 'mt-[0.5rem]'} cursor-pointer`} onClick={handleLogout}>
-            <WithdrawExitIcon />
+            {/* <WithdrawExitIcon /> */}
           </div>
         </div>
       </div>
