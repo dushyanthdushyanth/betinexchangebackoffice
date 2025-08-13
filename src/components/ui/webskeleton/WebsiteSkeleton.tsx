@@ -20,6 +20,7 @@ const WebsiteSkeleton = ({ children }: { children: React.ReactNode }) => {
   return (
 		<div className="flex sm:h-[100vh] h-[100vh] bg-primary relative">
       <Sidebar />
+      
       <div onClick={toggleIcon}
       className={`
         absolute top-[50%]  flex items-center justify-center
